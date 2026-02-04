@@ -1,0 +1,5 @@
+Chair,furniture,100.0,85
+Table,furniture,150.0,43
+Bed,furniture,200.0,19
+Laptop,device,500.0,16
+Headphones,device,90.0,40
