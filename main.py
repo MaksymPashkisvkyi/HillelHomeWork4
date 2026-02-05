@@ -33,10 +33,8 @@ if __name__ == "__main__":
     # Display initial stock quantities
     print("*" * 50)
     print("Початкова кількість товару, що є на складі:")
-    print(f"{products_list[0].name} = {products_list[0].quantity}")
-    print(f"{products_list[1].name} = {products_list[1].quantity}")
-    print(f"{products_list[2].name} = {products_list[2].quantity}")
-    print(f"{products_list[3].name} = {products_list[3].quantity}")
+    for product in products_list:
+        print(f"{product.name} = {product.quantity}")
     print("*" * 50)
     print()
 
@@ -63,8 +61,6 @@ if __name__ == "__main__":
     # Display remaining stock quantities
     print("*" * 50)
     print("Кількість товару, що залишилася на складі:")
-    print(f"{products_list[0].name} = {products_list[0].quantity}")
-    print(f"{products_list[1].name} = {products_list[1].quantity}")
-    print(f"{products_list[2].name} = {products_list[2].quantity}")
-    print(f"{products_list[3].name} = {products_list[3].quantity}")
+    for product in products_list:
+        print(f"{product.name} = {product.quantity}")
     print("*" * 50)
