@@ -15,6 +15,8 @@ if __name__ == "__main__":
     products_file = open("./dataset/products.txt", "r")
     raw_customers_list = customers_file.readlines()
     raw_products_list = products_file.readlines()
+    customers_file.close()
+    products_file.close()
 
     # Create a Customer object using data from the dataset
     customer_name, customer_email = raw_customers_list[0].split(",")
