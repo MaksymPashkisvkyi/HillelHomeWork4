@@ -3,10 +3,10 @@ class Product:
     Represents a product.
 
     Attributes:
-        __name (str): Product name.
-        __category (str): Product category (e.g., "soft toy", "constructor").
-        __price (float): Product price.
-        __quantity (int): Quantity of the product in stock.
+        _name (str): Product name.
+        _category (str): Product category (e.g., "soft toy", "constructor").
+        _price (float): Product price.
+        _quantity (int): Quantity of the product in stock.
 
     Methods:
         change_price(price: float) -> None:
@@ -25,10 +25,10 @@ class Product:
             price (float): Product price.
             quantity (int): Initial quantity in stock.
         """
-        self.__name = str(name)
-        self.__category = str(category)
-        self.__price = float(price)
-        self.__quantity = int(quantity)
+        self._name = name
+        self._category = category
+        self._price = float(price)
+        self._quantity = int(quantity)
 
     @property
     def name(self) -> str:
@@ -38,7 +38,7 @@ class Product:
         Returns:
             str: Product name.
         """
-        return self.__name
+        return self._name
 
     @property
     def category(self) -> str:
@@ -48,7 +48,7 @@ class Product:
         Returns:
             str: Product category.
         """
-        return self.__category
+        return self._category
 
     @property
     def price(self) -> float:
@@ -58,7 +58,7 @@ class Product:
         Returns:
             float: Product price.
         """
-        return self.__price
+        return self._price
 
     @price.setter
     def price(self, value) -> None:
@@ -73,7 +73,7 @@ class Product:
         """
         if value < 0:
             raise ValueError("Price cannot be less than 0.")
-        self.__price = value
+        self._price = value
 
     @property
     def quantity(self) -> int:
@@ -83,7 +83,7 @@ class Product:
         Returns:
             int: Product quantity in stock.
         """
-        return self.__quantity
+        return self._quantity
 
     @quantity.setter
     def quantity(self, value: int) -> None:
@@ -99,7 +99,7 @@ class Product:
         if value < 0:
             raise ValueError("Quantity cannot be less than 0.")
 
-        self.__quantity = int(value)
+        self._quantity = int(value)
 
     def change_price(self, price: float) -> None:
         """

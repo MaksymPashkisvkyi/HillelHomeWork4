@@ -6,8 +6,8 @@ class Order:
     Represents a customer order.
 
     Attributes:
-        __product_list (list[Product]): List of products in the order.
-        __total_amount (float): Total cost of the order.
+        _product_list (list[Product]): List of products in the order.
+        _total_amount (float): Total cost of the order.
 
     Methods:
         add_product(product: Product) -> None:
@@ -20,8 +20,8 @@ class Order:
         """
         Initialize an empty Order instance.
         """
-        self.__product_list: list[Product] = []
-        self.__total_amount: float = 0.0
+        self._product_list: list[Product] = []
+        self._total_amount: float = 0.0
 
     @property
     def product_list(self) -> list[Product]:
@@ -31,7 +31,7 @@ class Order:
         Returns:
             list[Product]: Products included in the order.
         """
-        return self.__product_list
+        return self._product_list
 
     @product_list.setter
     def product_list(self, value: list[Product]) -> None:
@@ -50,7 +50,7 @@ class Order:
 
         if not all(isinstance(item, Product) for item in value):
             raise TypeError("All items in product_list must be Product instances.")
-        self.__product_list = value
+        self._product_list = value
 
     @property
     def total_amount(self) -> float:
@@ -60,7 +60,7 @@ class Order:
         Returns:
             float: Total order amount.
         """
-        return self.__total_amount
+        return self._total_amount
 
     @total_amount.setter
     def total_amount(self, value: float) -> None:
@@ -75,7 +75,7 @@ class Order:
         """
         if value < 0:
             raise ValueError("Total order amount cannot be less than 0.")
-        self.__total_amount = value
+        self._total_amount = value
 
     def add_product(self, product: Product):
         """

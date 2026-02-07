@@ -6,9 +6,9 @@ class Customer:
     Represents a customer.
 
     Attributes:
-        __name       (str):       Customer name.
-        __email      (str):       Customer email address.
-        __order_list (list[Order]): List of the customer's orders.
+        _name       (str):       Customer name.
+        _email      (str):       Customer email address.
+        _order_list (list[Order]): List of the customer's orders.
 
     Methods:
         add_order(self, order: Order) -> None:
@@ -24,9 +24,9 @@ class Customer:
             email (str): Customer email address.
             order_list (list[Order] | None): Initial list of orders.
         """
-        self.__name = str(name)
-        self.__email = str(email)
-        self.__order_list = order_list
+        self._name = name
+        self._email = email
+        self._order_list = order_list
 
     @property
     def name(self) -> str:
@@ -36,7 +36,7 @@ class Customer:
         Returns:
             str: Customer name.
         """
-        return self.__name
+        return self._name
 
     @property
     def email(self) -> str:
@@ -46,7 +46,7 @@ class Customer:
         Returns:
             str: Customer email address.
         """
-        return self.__email
+        return self._email
 
     @property
     def order_list(self) -> list[Order]:
@@ -56,7 +56,7 @@ class Customer:
         Returns:
             list[Order]: Customer order list.
         """
-        return self.__order_list
+        return self._order_list
 
     @order_list.setter
     def order_list(self, value: list[Order]) -> None:
@@ -76,7 +76,7 @@ class Customer:
         if not all(isinstance(item, Order) for item in value):
             raise TypeError("All items in order_list must be Order instances.")
 
-        self.__order_list = value
+        self._order_list = value
 
     def add_order(self, order: Order) -> None:
         """
